@@ -25,7 +25,7 @@ public class Employee {
     private String employeeCode; // 员工编号，唯一且不能为空
 
     @Column(nullable = false)
-    private String lastName;
-    private String email;
+    private String Name;  // 员工姓名，不能为空
+    //private String department; 
 
 }

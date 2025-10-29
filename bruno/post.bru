@@ -1,0 +1,15 @@
+meta {
+  name: New HTTP Request
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/api/employees
+  body: json
+  auth: none
+}
+
+body:json {
+  {"employeeCode": "E001", "name": "张三"}
+}
