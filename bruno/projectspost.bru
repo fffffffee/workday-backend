@@ -1,0 +1,16 @@
+
+meta {
+  name: New HTTP Request
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/api/projects
+  body: json
+  auth: none
+}
+
+body:json {
+  {"projectCode": "P001", "projectName": "项目一", "description": "这是第一个项目"}
+}
