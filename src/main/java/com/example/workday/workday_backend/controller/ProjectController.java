@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import java.util.List;
 
+/**
+ * 项目控制器，处理与项目相关的HTTP请求
+ */
 @RestController
 @RequestMapping("/api/projects")
 @CrossOrigin(origins = "http://localhost:5173")
@@ -50,6 +53,11 @@ public class ProjectController {
                 .map(project -> {
                     project.setProjectCode(projectDetails.getProjectCode());
                     project.setProjectName(projectDetails.getProjectName());
+                    project.setManager(projectDetails.getManager());
+                    project.setStartDate(projectDetails.getStartDate());
+                    project.setEndDate(projectDetails.getEndDate());
+                    project.setStatus(projectDetails.getStatus());
+                    project.setDescription(projectDetails.getDescription());
                     Project updatedProject = projectRepository.save(project);
                     return ResponseEntity.ok().body(updatedProject);
                 }).orElse(ResponseEntity.notFound().build());
